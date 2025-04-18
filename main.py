@@ -12,11 +12,16 @@ import os
 from dotenv import load_dotenv
 
 
+load_dotenv()
+
 def get_db_path():
     if os.getenv("HF_SPACE"):
         return "/tmp/feedback.db"
     else:
         return "feedback/feedback.db"
+
+
+
 
 # Load documents
 loader = TextLoader("data/sample.txt")
